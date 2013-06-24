@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidVSPackageGDBAPkg">
+            
+    <!-- Group which relates the Menu item defined here into the Context Menu of the Entity Designer -->
+    <Groups>
+        <Group guid="guidVSPackageGDBACmdSet" id="refreshContextMenuGroup" priority="0x0100">
+            <Parent guid="guidDesigner" id="menuidContext"/>
+        </Group>
+    </Groups>
+    
+    <Buttons>
+        <Button guid="guidVSPackageGDBACmdSet" id="cmdidRefreshContextMenu" priority="0x0100" type="Button">
+            <Parent guid="guidVSPackageGDBACmdSet" id="refreshContextMenuGroup"/>
+            <CommandFlag>DynamicVisibility</CommandFlag>
+            <Strings>
+                <CommandName>cmdidRefreshContextMenu</CommandName>
+                <ButtonText>Refresh Designer</ButtonText>
+            </Strings>
+        </Button> 
+    </Buttons>
+   
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\Images.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows"/>  
+    </Bitmaps>
+  </Commands>
+
+  <Symbols>
+    <!-- This VsPackage ID -->
+    <GuidSymbol name="guidVSPackageGDBAPkg" value="{1f760350-56cc-4ecf-9e80-d89675cd8455}" />
+    
+    <!-- VsPackage ID of the Entity Framework Designer -->
+    <GuidSymbol name="guidDesigner" value="{11ac0a76-365e-490d-abad-e44e52897c7d}">
+        <IDSymbol name="menuidContext" value="0x00010000" />
+    </GuidSymbol>  
+
+    <!-- Group Symbols for the Context Manu -->
+    <GuidSymbol name="guidVSPackageGDBACmdSet" value="{fdd58a6e-5a92-4237-967e-d5d4eb3abcac}">
+        <IDSymbol name="refreshContextMenuGroup" value="0x0102" />
+        <IDSymbol name="cmdidRefreshContextMenu" value="0x0103" />
+    </GuidSymbol>
+    
+    <GuidSymbol name="guidImages" value="{4937555d-7478-405f-a99d-ba4002cf98a7}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  </Symbols>
+
+</CommandTable>
