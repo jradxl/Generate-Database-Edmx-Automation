@@ -1,5 +1,5 @@
 ﻿
-namespace MultiFileEDMXTools.Properties
+namespace EDMXFileTools.Properties
 {
     using Microsoft.Data.Entity.Design.Extensibility;
     using System;
@@ -50,7 +50,7 @@ namespace MultiFileEDMXTools.Properties
             else
                 propertyValue = string.Empty;
 
-            using (EntityDesignerChangeScope scope = _context.CreateChangeScope("Set MultiFileEDMXTools"))
+            using (EntityDesignerChangeScope scope = _context.CreateChangeScope("Set EDMXFileTools"))
             {
                 if (_parent.HasElements)
                 {
@@ -83,7 +83,7 @@ namespace MultiFileEDMXTools.Properties
             bool propertyValue = value;
 
             // Make changes to the .edmx document in an EntityDesignerChangeScope to enable undo/redo of changes.
-            using (EntityDesignerChangeScope scope = _context.CreateChangeScope("Set MultiFileEDMXTools"))
+            using (EntityDesignerChangeScope scope = _context.CreateChangeScope("Set EDMXFileTools"))
             {
                 if (_parent.HasElements)
                 {

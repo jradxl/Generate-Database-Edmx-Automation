@@ -7,7 +7,7 @@
     <ProjectGuid>{4145F735-B6DA-4579-9A88-E4C2A407D786}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MultiFileEDMXTools</RootNamespace>
+    <RootNamespace>EDMXFileTools</RootNamespace>
     <AssemblyName>MultiFileEDMXTools</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RefreshOnSaveEnabled.cs" />
     <Compile Include="DesignerSurfaceEdmxAutomationEnabled.cs" />
     <Compile Include="DesignerPropertyFactories.cs" />
     <Compile Include="ModelTransformExtension.cs" />

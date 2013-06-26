@@ -12,7 +12,7 @@ namespace TestClassLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class Entity1
+    public partial class Person
     {
         public int Id { get; set; }
         public string Lastname { get; set; }
@@ -24,12 +24,5 @@ namespace TestClassLibrary
         public string Field4 { get; set; }
         public string Field5 { get; set; }
         public string Field6 { get; set; }
-        public string Field7 { get; set; }
-        public string Field8 { get; set; }
-        public string Field9 { get; set; }
-        public string Field10 { get; set; }
-        public string Field11 { get; set; }
-        public string Field12 { get; set; }
-        public string Field13 { get; set; }
     }
 }

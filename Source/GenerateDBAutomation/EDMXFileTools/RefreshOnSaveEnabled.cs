@@ -5,24 +5,24 @@ namespace EDMXFileTools.Properties
     using System.ComponentModel;
     using System.Xml.Linq;
 
-    class EdmxAutomationEnabledProperty
+    class RefreshOnSaveEnabledProperty
     {
         private XElement _parent;
         private PropertyExtensionContext _context;
 
-        private const string _designerExtensionsNamespace = @"http://schemas.tempuri.com/EdmxAutomationEnabledDesignerExtension";
-        static readonly XName _xnStarterKitNamespace = XName.Get("EdmxAutomationEnabled", _designerExtensionsNamespace);
+        private const string _designerExtensionsNamespace = @"http://schemas.tempuri.com/RefreshOnSaveEnabledDesignerExtension";
+        static readonly XName _xnStarterKitNamespace = XName.Get("RefreshOnSaveEnabled", _designerExtensionsNamespace);
 
-        public EdmxAutomationEnabledProperty(XElement parent, PropertyExtensionContext context)
+        public RefreshOnSaveEnabledProperty(XElement parent, PropertyExtensionContext context)
         {
             _context = context;
             _parent = parent;
         }
 
-        [DisplayName("Enabled")]
-        [Description("Set to True to enable creation of new Ssdl and Msl on Save.")]
+        [DisplayName("Refresh On Save Enabled")]
+        [Description("Set to True to enable refresh of Designer on save.")]
         [Category("EDMX File Tools")]
-        public bool EdmxAutomationEnabled
+        public bool RefreshOnSaveEnabled
         {
             get { return getValue(_xnStarterKitNamespace); }
             set { setValue(_xnStarterKitNamespace, value); }

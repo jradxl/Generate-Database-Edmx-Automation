@@ -1,5 +1,5 @@
 ﻿
-namespace MultiFileEDMXTools
+namespace EDMXFileTools
 {
     using Microsoft.Data.Entity.Design.DatabaseGeneration;
     using Microsoft.Data.Entity.Design.DatabaseGeneration.Activities;

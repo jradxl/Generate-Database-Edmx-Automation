@@ -59,5 +59,41 @@ namespace Company.VSPackageCM.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Can not create tool window..
+        /// </summary>
+        internal static string CanNotCreateWindow {
+            get {
+                return ResourceManager.GetString("CanNotCreateWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Event.
+        /// </summary>
+        internal static string EventHeader {
+            get {
+                return ResourceManager.GetString("EventHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moniker.
+        /// </summary>
+        internal static string MonikerHeader {
+            get {
+                return ResourceManager.GetString("MonikerHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RDT Event Explorer XX.
+        /// </summary>
+        internal static string ToolWindowTitle {
+            get {
+                return ResourceManager.GetString("ToolWindowTitle", resourceCulture);
+            }
+        }
     }
 }

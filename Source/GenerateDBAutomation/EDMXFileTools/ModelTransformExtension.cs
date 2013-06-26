@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.Entity.Design.Extensibility;
 using System.ComponentModel.Composition;
 
-namespace MultiFileEDMXTools
+namespace EDMXFileTools
 {
     [Export(typeof(IModelTransformExtension))]
     [PartCreationPolicy(CreationPolicy.Shared)]
@@ -17,7 +17,8 @@ namespace MultiFileEDMXTools
         /// <param name="context"></param>
         void IModelTransformExtension.OnAfterModelLoaded(ModelTransformExtensionContext context)
         {
-            //AfterModelLoaded is not used.
+            //AfterModelLoaded only used to access Designer Surface Properties
+            new EdmxTools().GetProperties(context);
         }
 
         /// <summary>
@@ -29,7 +30,7 @@ namespace MultiFileEDMXTools
         void IModelTransformExtension.OnBeforeModelSaved(ModelTransformExtensionContext context)
         {
             //Now carryout the Save option, with option recreation of the Ssdl and Msl.
-            new EdmxToolsTools().StoreEdmxModel(context);
+            new EdmxTools().StoreEdmxModel(context);
         }
     }
 }

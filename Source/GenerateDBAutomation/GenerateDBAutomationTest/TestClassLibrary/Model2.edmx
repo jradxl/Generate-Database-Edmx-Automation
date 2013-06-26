@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl"><EntityContainer Name="Model2StoreContainer"><EntitySet Name="People" EntityType="Model2.Store.People" store:Type="Tables" Schema="dbo" /></EntityContainer><EntityType Name="People"><Key><PropertyRef Name="Id" /></Key><Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" /><Property Name="Lastname" Type="nvarchar(max)" Nullable="false" /><Property Name="Firstname" Type="nvarchar(max)" Nullable="false" /><Property Name="Middlename" Type="nvarchar(max)" Nullable="false" /><Property Name="Field1" Type="nvarchar(max)" Nullable="false" /><Property Name="Field2" Type="nvarchar(max)" Nullable="false" /><Property Name="Field3" Type="nvarchar(max)" Nullable="false" /><Property Name="Field4" Type="nvarchar(max)" Nullable="false" /><Property Name="Field5" Type="nvarchar(max)" Nullable="false" /><Property Name="Field6" Type="nvarchar(max)" Nullable="false" /></EntityType></Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model2" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model2Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="People" EntityType="Model2.Person" />
+        </EntityContainer>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Lastname" Nullable="false" />
+          <Property Type="String" Name="Firstname" Nullable="false" />
+          <Property Type="String" Name="Middlename" Nullable="false" />
+          <Property Type="String" Name="Field1" Nullable="false" />
+          <Property Type="String" Name="Field2" Nullable="false" />
+          <Property Type="String" Name="Field3" Nullable="false" />
+          <Property Type="String" Name="Field4" Nullable="false" />
+          <Property Type="String" Name="Field5" Nullable="false" />
+          <Property Type="String" Name="Field6" Nullable="false" />
+        </EntityType><a:EdmxAutomationEnabled xmlns:a="http://schemas.tempuri.com/EdmxAutomationEnabledDesignerExtension">True</a:EdmxAutomationEnabled>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs"><EntityContainerMapping StorageEntityContainer="Model2StoreContainer" CdmEntityContainer="Model2Container"><EntitySetMapping Name="People"><EntityTypeMapping TypeName="IsTypeOf(Model2.Person)"><MappingFragment StoreEntitySet="People"><ScalarProperty Name="Id" ColumnName="Id" /><ScalarProperty Name="Lastname" ColumnName="Lastname" /><ScalarProperty Name="Firstname" ColumnName="Firstname" /><ScalarProperty Name="Middlename" ColumnName="Middlename" /><ScalarProperty Name="Field1" ColumnName="Field1" /><ScalarProperty Name="Field2" ColumnName="Field2" /><ScalarProperty Name="Field3" ColumnName="Field3" /><ScalarProperty Name="Field4" ColumnName="Field4" /><ScalarProperty Name="Field5" ColumnName="Field5" /><ScalarProperty Name="Field6" ColumnName="Field6" /></MappingFragment></EntityTypeMapping></EntitySetMapping></EntityContainerMapping></Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

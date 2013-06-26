@@ -5,12 +5,34 @@
   <Extern href="vsshlids.h"/>
 
   <Commands package="guidVSPackageGDBAPkg">
-            
+
+    <Menus>
+        <!--A toolbar is a menu with itself as the "Relative to Group" and a "Type" of "ToolWindowToolbar" -->
+        <Menu guid="guidRdtEventExplorerCmdSet" id="IDM_MyToolbar" priority="0x0000" type="ToolWindowToolbar">
+            <Parent guid="guidRdtEventExplorerCmdSet" id="IDM_MyToolbar"/>
+            <Strings>
+                <ButtonText>WindowToolBar</ButtonText>
+                <CommandName>Window Toolbar</CommandName>
+            </Strings>
+        </Menu>
+    </Menus>
+      
     <!-- Group which relates the Menu item defined here into the Context Menu of the Entity Designer -->
     <Groups>
         <Group guid="guidVSPackageGDBACmdSet" id="refreshContextMenuGroup" priority="0x0100">
             <Parent guid="guidDesigner" id="menuidContext"/>
         </Group>
+
+        <!--To define a menu group you have to specify its ID, the parent menu and its display priority. -->
+        <Group guid="guidRdtEventExplorerCmdSet" id="MyMenuGroup" priority="0x0600">
+            <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+        </Group>
+        
+        <!-- On the toolbar (menu) we can have 1 or more group that will contain the buttons -->
+        <Group guid="guidRdtEventExplorerCmdSet" id="IDG_MyToolbarGroup" priority="0x0500">
+            <Parent guid="guidRdtEventExplorerCmdSet" id="IDM_MyToolbar"/>
+        </Group>
+        
     </Groups>
     
     <Buttons>
@@ -21,7 +43,31 @@
                 <CommandName>cmdidRefreshContextMenu</CommandName>
                 <ButtonText>Refresh Designer</ButtonText>
             </Strings>
-        </Button> 
+        </Button>
+
+        <Button guid="guidRdtEventExplorerCmdSet" id="cmdidMyTool" priority="0x0100" type="Button">
+            <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
+            <Icon guid="guidRdtEventExplorerImages" id="bmpPic2"/>
+            <Strings>
+                <ButtonText>RDT E&amp;vent Explorer YY</ButtonText>
+            </Strings>
+        </Button>
+        <!-- The following commands will appear on the tool window toolbar -->
+        <Button guid="guidRdtEventExplorerCmdSet" id="cmdidRefreshWindowsList" priority="0x100" type="Button">
+            <Parent guid="guidRdtEventExplorerCmdSet" id="IDG_MyToolbarGroup"/>
+            <Icon guid="guidImages" id="bmpPic1"/>
+            <Strings>
+                <ButtonText>Refresh</ButtonText>
+            </Strings>
+        </Button>
+        <Button guid="guidRdtEventExplorerCmdSet" id="cmdidClearWindowsList" priority="0x100" type="Button">
+            <Parent guid="guidRdtEventExplorerCmdSet" id="IDG_MyToolbarGroup"/>
+            <Icon guid="guidImages" id="bmpPic2"/>
+            <Strings>
+                <ButtonText>Clear</ButtonText>
+            </Strings>
+        </Button>
+        
     </Buttons>
    
     <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
@@ -44,7 +90,25 @@
         <IDSymbol name="refreshContextMenuGroup" value="0x0102" />
         <IDSymbol name="cmdidRefreshContextMenu" value="0x0103" />
     </GuidSymbol>
-    
+
+    <GuidSymbol name="guidRdtEventExplorerCmdSet" value="{f520383c-4ee3-4155-a499-2fe423f5e9e6}">
+        <IDSymbol name="IDM_MyToolbar" value="0x0101"/>
+        <IDSymbol name="MyMenuGroup" value="0x1020"/>
+        <IDSymbol name="IDG_MyToolbarGroup" value="0x1001"/>
+
+        <IDSymbol name="cmdidMyTool" value="0x2001"/>
+        <IDSymbol name="cmdidClearWindowsList" value="0x2002"/>
+        <IDSymbol name="cmdidRefreshWindowsList" value="0x2003"/>
+    </GuidSymbol>
+      
+    <GuidSymbol name="guidRdtEventExplorerImages" value="{78C22100-63B4-4bb8-85F5-BB8EFD0924AC}" >
+        <IDSymbol name="bmpPic1" value="0x1"/>
+        <IDSymbol name="bmpPic2" value="0x2"/>
+        <IDSymbol name="bmpPicSmile" value="0x3"/>
+        <IDSymbol name="bmpPicX" value="0x4"/>
+        <IDSymbol name="bmpPicArrows" value="0x5"/>
+    </GuidSymbol>
+      
     <GuidSymbol name="guidImages" value="{4937555d-7478-405f-a99d-ba4002cf98a7}" >
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />

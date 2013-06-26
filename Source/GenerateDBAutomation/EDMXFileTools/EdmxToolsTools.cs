@@ -1,5 +1,5 @@
 ﻿
-namespace MultiFileEDMXTools
+namespace EDMXFileTools
 {
     using Microsoft.Data.Entity.Design.Extensibility;
     using System;
@@ -13,14 +13,47 @@ namespace MultiFileEDMXTools
     /// <summary>
     /// 
     /// </summary>
-    class EdmxToolsTools
+    public class EdmxTools
     {
-        private static bool _enabled = false;
         private readonly NamespaceManager _namespaceManager = null;
 
-        public EdmxToolsTools()
+        public EdmxTools()
         {
             _namespaceManager = new NamespaceManager();
+        }
+
+        public static Boolean EdmxAutomationEnabled { get; private set; }
+        public static Boolean RefreshOnSaveEnabled { get; private set; }
+
+        public void GetProperties(ModelTransformExtensionContext context)
+        {
+            var edmxDoc = context.CurrentDocument;
+
+            //Check for existance and enabled. The property is stored in the Conceptual section.
+            var property = edmxDoc.Descendants(XName.Get("EdmxAutomationEnabled", "http://schemas.tempuri.com/EdmxAutomationEnabledDesignerExtension")).FirstOrDefault();
+            if (property == null)
+            {
+                //If not present, we default to false;
+                EdmxAutomationEnabled = false;
+            }
+            else
+            {
+                //If present and false we accept incoming EDMX..
+                EdmxAutomationEnabled = Convert.ToBoolean(property.Value);
+            }
+
+            //Check for existance and enabled. The property is stored in the Conceptual section.
+            property = edmxDoc.Descendants(XName.Get("RefreshOnSaveEnabled", "http://schemas.tempuri.com/RefreshOnSaveEnabledDesignerExtension")).FirstOrDefault();
+            if (property == null)
+            {
+                //If not present, we default to false;
+                RefreshOnSaveEnabled = false;
+            }
+            else
+            {
+                //If present and false we accept incoming EDMX..
+                RefreshOnSaveEnabled = Convert.ToBoolean(property.Value);
+            }
         }
 
         public void ReGenerateSsdlMslAndDdl(ModelTransformExtensionContext context)
@@ -88,24 +121,14 @@ namespace MultiFileEDMXTools
                 var path = context.ProjectItem.FileNames[0];
 
                 //The Edmx document always exists and [hopefully] contains the designer surface property that
-                //we use to determine whether MultiFileEDMXTools is enabled.
+                //we use to determine whether EDMXFileTools is enabled.
                 //The User may have set to true in this session to be saved.
                 var edmxDoc = context.CurrentDocument;
 
-                //Check for existance and enabled. The property is stored in the Conceptual section.
-                var property = edmxDoc.Descendants(XName.Get("EdmxAutomationEnabled", "http://schemas.tempuri.com/EdmxAutomationEnabledDesignerExtension")).FirstOrDefault();
-                if (property == null)
-                {
-                    //If not present, we default to false;
-                    _enabled = false;
-                }
-                else
-                {
-                    //If present and false we accept incoming EDMX..
-                    _enabled = Convert.ToBoolean(property.Value);
-                }
+                //Update properties as they may have been changed in this session.
+                GetProperties(context);
 
-                if (_enabled)
+                if (EdmxAutomationEnabled)
                 {
                     //Re-create the Ssdl and Msl to ensure everything is Mapped.
                     //Entity Designer does not support custom mappings
