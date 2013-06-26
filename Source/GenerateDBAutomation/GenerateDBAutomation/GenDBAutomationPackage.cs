@@ -15,7 +15,7 @@ namespace Company.VSPackageCM
     [InstalledProductRegistration("#110", "#112", "1.0.2", IconResourceID = 400)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideToolWindow(typeof(RdtEventWindowPane))]
-    [ProvideOptionPage(typeof(RdtEventOptionsDialog), "RDT Event Explorer ZZ", "Explorer Options", 0, 0, true)]
+    [ProvideOptionPage(typeof(RdtEventOptionsDialog), "RDT Event Explorer", "Explorer Options", 0, 0, true)]
     //Force a load of this package instead of on demand
     [ProvideAutoLoad(Microsoft.VisualStudio.Shell.Interop.UIContextGuids80.SolutionExists)]
     [Guid(GuidList.guidVSPackageGDBAPkgString)]
@@ -29,7 +29,6 @@ namespace Company.VSPackageCM
         //Edmx saving managment
         uint rdtCookie;
         RunningDocumentTable rdt;
-        //ProjectItem projectItem = null;
         String closingDocument = String.Empty;
         Microsoft.VisualStudio.Shell.SelectionContainer selectionContainer;
 
@@ -160,34 +159,34 @@ namespace Company.VSPackageCM
 
         public int OnAfterSave(uint docCookie)
         {
+            //For SaveAll, OnAfterSave will be called individually
             if (EDMXFileTools.EdmxTools.RefreshOnSaveEnabled)
             {
-                var ev = new GenericEvent(rdt, "OnAfterSave", docCookie);
-                var document = ev.DocumentName;
-                var extension = System.IO.Path.GetExtension(document);
-                //We'll make assumuption that the extension won't change.
-                if (extension.Equals(".edmx"))
+                try
                 {
-                    DTE dte = Package.GetGlobalService(typeof(DTE)) as DTE;
+                    var ev = new GenericEvent(rdt, "OnAfterSave", docCookie);
+                    var document = ev.DocumentName;
+                    var extension = System.IO.Path.GetExtension(document);
 
-                    Array projects = (Array)dte.ActiveSolutionProjects;
-                    Project activeProject = (Project)projects.GetValue(0);
-
-                    //ActiveDocument can only be the .Edmx file in the Designer.
-                    //Locate the Projectitem reference for this using full path and filename as Key.
-                    foreach (ProjectItem proj in activeProject.ProjectItems)
+                    //We'll make assumuption that the extension won't change.
+                    if (extension.Equals(".edmx"))
                     {
+                        DTE dte = Package.GetGlobalService(typeof(DTE)) as DTE;
                         foreach (Document doc in dte.Documents)
                         {
+                            //Using a full path comparision, the match wil be unique.
                             if (doc.FullName.Equals(ev.DocumentMoniker))
                             {
-                                //projectItem = proj;
                                 closingDocument = ev.DocumentMoniker;
                                 doc.Close();
                                 return VSConstants.S_OK;
                             }
                         }
                     }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(String.Format("EdmxFileTools Error reactivating {0}, {1}", closingDocument, ex.Message));
                 }
             }
             return VSConstants.S_OK;
@@ -196,24 +195,26 @@ namespace Company.VSPackageCM
         public int OnAfterLastDocumentUnlock(IVsHierarchy pHier, uint itemid, string pszMkDocument, int fClosedWithoutSaving)
         {
             //The close initiated in OnAfterSave will cause an additional call here for the .diagram file.
-            if (EDMXFileTools.EdmxTools.RefreshOnSaveEnabled && !String.IsNullOrEmpty(closingDocument)) //&& projectItem != null)
+            if (EDMXFileTools.EdmxTools.RefreshOnSaveEnabled && !String.IsNullOrEmpty(closingDocument))
             {
                 if (pszMkDocument.Equals(closingDocument))
                 {
                     try
                     {
                         DTE dte = Package.GetGlobalService(typeof(DTE)) as DTE;
-                        Array projects = (Array)dte.ActiveSolutionProjects;
-                        Project activeProject = (Project)projects.GetValue(0);
-                        foreach (ProjectItem item in activeProject.ProjectItems)
+
+                        //Now the file is closed we need to iterate to find it.
+                        foreach (Project proj in dte.Solution.Projects)
                         {
-                            if (item.FileNames[0].Equals(closingDocument))
+                            foreach (ProjectItem item in proj.ProjectItems)
                             {
-                                if (!item.IsOpen)
-                                    item.Open().Activate();
-                                closingDocument = String.Empty;
-                                //projectItem = null;
-                                return VSConstants.S_OK;
+                                if (item.FileNames[0].Equals(closingDocument))
+                                {
+                                    if (!item.IsOpen)
+                                        item.Open().Activate();
+                                    closingDocument = String.Empty;
+                                    return VSConstants.S_OK;
+                                }
                             }
                         }
                     }

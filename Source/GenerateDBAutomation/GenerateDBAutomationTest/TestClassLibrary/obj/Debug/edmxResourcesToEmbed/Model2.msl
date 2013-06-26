@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model2StoreContainer" CdmEntityContainer="Model2Container">
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="IsTypeOf(Model2.Person)">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+          <ScalarProperty Name="Field6" ColumnName="Field6" />
+          <ScalarProperty Name="Field7" ColumnName="Field7" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

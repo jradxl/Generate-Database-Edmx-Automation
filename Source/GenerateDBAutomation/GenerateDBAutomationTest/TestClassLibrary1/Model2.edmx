@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl"><EntityContainer Name="Model2StoreContainer"><EntitySet Name="People" EntityType="Model2.Store.People" store:Type="Tables" Schema="dbo" /></EntityContainer><EntityType Name="People"><Key><PropertyRef Name="Id" /></Key><Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" /><Property Name="Lastname" Type="nvarchar(max)" Nullable="false" /><Property Name="Firstname" Type="nvarchar(max)" Nullable="false" /></EntityType></Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model2" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model2Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="People" EntityType="Model2.Person" />
+        </EntityContainer>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Lastname" Nullable="false" />
+          <Property Type="String" Name="Firstname" Nullable="false" />
+        </EntityType><a:EdmxAutomationEnabled xmlns:a="http://schemas.tempuri.com/EdmxAutomationEnabledDesignerExtension">True</a:EdmxAutomationEnabled><a:RefreshOnSaveEnabled xmlns:a="http://schemas.tempuri.com/RefreshOnSaveEnabledDesignerExtension">True</a:RefreshOnSaveEnabled>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs"><EntityContainerMapping StorageEntityContainer="Model2StoreContainer" CdmEntityContainer="Model2Container"><EntitySetMapping Name="People"><EntityTypeMapping TypeName="IsTypeOf(Model2.Person)"><MappingFragment StoreEntitySet="People"><ScalarProperty Name="Id" ColumnName="Id" /><ScalarProperty Name="Lastname" ColumnName="Lastname" /><ScalarProperty Name="Firstname" ColumnName="Firstname" /></MappingFragment></EntityTypeMapping></EntitySetMapping></EntityContainerMapping></Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="d804def8b88149b9a6bcc950079cf390" Name="Diagram1">
+        <EntityTypeShape EntityType="Model2.Person" Width="1.5" PointX="2" PointY="1.75" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

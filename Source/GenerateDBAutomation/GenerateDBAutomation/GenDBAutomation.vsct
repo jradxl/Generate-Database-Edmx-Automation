@@ -49,7 +49,7 @@
             <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
             <Icon guid="guidRdtEventExplorerImages" id="bmpPic2"/>
             <Strings>
-                <ButtonText>RDT E&amp;vent Explorer YY</ButtonText>
+                <ButtonText>RDT E&amp;vent Explorer</ButtonText>
             </Strings>
         </Button>
         <!-- The following commands will appear on the tool window toolbar -->

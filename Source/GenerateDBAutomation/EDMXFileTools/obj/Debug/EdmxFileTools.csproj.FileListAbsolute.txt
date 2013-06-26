@@ -1,0 +1,12 @@
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\bin\Debug\MultiFileEDMXTools.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\bin\Debug\MultiFileEDMXTools.pdb
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\bin\Debug\Microsoft.Data.Entity.Design.DatabaseGeneration.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\bin\Debug\Microsoft.Data.Entity.Design.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\bin\Debug\Microsoft.Data.Entity.Design.Extensibility.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\bin\Debug\Microsoft.Data.Tools.Design.XmlCore.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\bin\Debug\Microsoft.Data.Entity.Design.Model.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\bin\Debug\Microsoft.VisualStudio.Data.Tools.Design.XmlCore.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\bin\Debug\Microsoft.WizardFramework.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\bin\Debug\Microsoft.VisualStudio.DataTools.Interop.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\obj\Debug\MultiFileEDMXTools.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\EDMXFileTools\obj\Debug\MultiFileEDMXTools.pdb

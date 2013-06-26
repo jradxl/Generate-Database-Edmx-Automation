@@ -1,0 +1,7 @@
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary\bin\Debug\TestClassLibrary.dll.config
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary\bin\Debug\TestClassLibrary.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary\bin\Debug\TestClassLibrary.pdb
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary\bin\Debug\EntityFramework.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary\bin\Debug\EntityFramework.xml
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary\obj\Debug\TestClassLibrary.dll
+C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary\obj\Debug\TestClassLibrary.pdb

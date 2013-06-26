@@ -88,7 +88,7 @@ namespace Company.VSPackageCM.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RDT Event Explorer XX.
+        ///   Looks up a localized string similar to RDT Event Explorer.
         /// </summary>
         internal static string ToolWindowTitle {
             get {

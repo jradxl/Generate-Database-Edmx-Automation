@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Entity1">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Entity1)">
+        <MappingFragment StoreEntitySet="Entity1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Middlename" ColumnName="Middlename" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="Field2" ColumnName="Field2" />
+          <ScalarProperty Name="Field3" ColumnName="Field3" />
+          <ScalarProperty Name="Field4" ColumnName="Field4" />
+          <ScalarProperty Name="Field5" ColumnName="Field5" />
+          <ScalarProperty Name="Field6" ColumnName="Field6" />
+          <ScalarProperty Name="Field7" ColumnName="Field7" />
+          <ScalarProperty Name="Field8" ColumnName="Field8" />
+          <ScalarProperty Name="Field9" ColumnName="Field9" />
+          <ScalarProperty Name="Field10" ColumnName="Field10" />
+          <ScalarProperty Name="Field11" ColumnName="Field11" />
+          <ScalarProperty Name="Field12" ColumnName="Field12" />
+          <ScalarProperty Name="Field13" ColumnName="Field13" />
+          <ScalarProperty Name="Field14" ColumnName="Field14" />
+          <ScalarProperty Name="Field15" ColumnName="Field15" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

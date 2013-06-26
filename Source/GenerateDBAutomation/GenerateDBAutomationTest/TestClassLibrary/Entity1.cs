@@ -31,5 +31,7 @@ namespace TestClassLibrary
         public string Field11 { get; set; }
         public string Field12 { get; set; }
         public string Field13 { get; set; }
+        public string Field14 { get; set; }
+        public string Field15 { get; set; }
     }
 }

@@ -127,6 +127,6 @@
     <value>Moniker</value>
   </data>
   <data name="ToolWindowTitle" xml:space="preserve">
-    <value>RDT Event Explorer XX</value>
+    <value>RDT Event Explorer</value>
   </data>
 </root>
