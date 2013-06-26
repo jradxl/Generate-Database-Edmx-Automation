@@ -1,8 +1,0 @@
-C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary1\bin\Debug\TestClassLibrary1.dll.config
-C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary1\bin\Debug\TestClassLibrary1.dll
-C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary1\bin\Debug\TestClassLibrary1.pdb
-C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary1\bin\Debug\EntityFramework.dll
-C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary1\bin\Debug\EntityFramework.xml
-C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary1\obj\Debug\TestClassLibrary1.dll
-C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary1\obj\Debug\TestClassLibrary1.pdb
-C:\DB\Dropbox\VS\VS12\EF\CGTE\GenerateDatabaseAutomation\GenerateDBAutomation\GenerateDBAutomationTest\TestClassLibrary1\obj\Debug\TestClassLibrary1.csprojResolveAssemblyReference.cache
